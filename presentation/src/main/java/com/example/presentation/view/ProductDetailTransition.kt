@@ -12,4 +12,8 @@ sealed class ProductDetailTransition : Parcelable {
 
     @Parcelize
     class DeleteElementKO: ProductDetailTransition()
+
+    @Parcelize
+    class NavigateToImagePager: ProductDetailTransition()
+
 }
