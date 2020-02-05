@@ -4,9 +4,10 @@ ext {
     androidRecyclerView = "1.1.0"
     androidLifeCycleVersion = "2.2.0"
     koin_version = '2.0.1'
+    constraintlayout = '2.0.0-beta1'
+    materialdesign = '1.1.0-alpha09'
     viewPager2 = "1.0.0"
     nav_version = "2.1.0"
-
 
     presentationLib = [
             appCompat         : "androidx.appcompat:appcompat:$androidVersion",
@@ -17,6 +18,8 @@ ext {
             lifeCycleViewModel: "androidx.lifecycle:lifecycle-viewmodel-ktx:$androidLifeCycleVersion",
             lifeCycleRuntime  : "androidx.lifecycle:lifecycle-runtime-ktx:$androidLifeCycleVersion",
             koinViewmodel     : "org.koin:koin-androidx-viewmodel:$koin_version",
+            constraintlayout : "androidx.constraintlayout:constraintlayout:$constraintlayout",
+            material        : "com.google.android.material:material:$materialdesign",
             viewPager2        : "androidx.viewpager2:viewpager2:$viewPager2",
             navFragment       : "androidx.navigation:navigation-fragment-ktx:$nav_version",
             navUi             : "androidx.navigation:navigation-ui-ktx:$nav_version"

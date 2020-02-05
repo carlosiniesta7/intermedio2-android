@@ -58,4 +58,12 @@ object ElementRepository {
 
         return elementList.remove(elementToRemove)
     }
+
+    fun doLogin(): Boolean {
+        return true
+    }
+
+    fun getImages(): List<Int> {
+        return listOf()
+    }
 }
