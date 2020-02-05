@@ -12,4 +12,8 @@ import es.example.presentation.BaseViewModel
 
 class LoginViewModel(val getElement: GetElements): BaseViewModel<LoginState, LoginTransition>() {
 
+
+    fun doLogin() {
+        //UC-Login
+    }
 }

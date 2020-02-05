@@ -11,7 +11,6 @@ import kotlin.coroutines.CoroutineContext
 
 abstract class BaseViewModel <STATE : Parcelable, TRANSITION>() : ViewModel() {
 
-
     protected val viewState = MutableLiveData<STATE>()
     protected val viewTransition = SingleLiveEvent<TRANSITION>()
 
