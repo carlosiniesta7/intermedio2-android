@@ -1,30 +1,32 @@
 package com.example.presentation.view
 
+import androidx.lifecycle.Observer
+import com.example.presentation.R
 import es.example.presentation.BaseFragment
 import es.example.presentation.BaseViewModel
+import kotlinx.android.synthetic.main.product_list_layout.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginFragment: BaseFragment<LoginState, LoginTransition>(){
 
-    override val viewModel: BaseViewModel<LoginState, LoginTransition>
-        get() = TODO("not implemented") //To change initializer of created properties use File | Settings | File Templates.
+    var adapter: MainAdapter? = null
+
+    override val viewModel by viewModel<LoginViewModel>()
 
     override fun initViews() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
     override fun manageState(state: LoginState) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun manageTransition(transition: LoginTransition) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun initListeners() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun getLayout(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return R.layout.fragment_login
     }
 }

@@ -7,6 +7,7 @@ import com.example.presentation.view.*
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
+import com.example.presentation.view.LoginViewModel as LoginViewModel
 
 class MyApplication : Application() {
 
@@ -26,10 +27,10 @@ class MyApplication : Application() {
         factory { GetElement(get()) }
         factory { AddElement(get()) }
         factory { DeleteElement(get()) }
-        viewModel { MainViewModel(get(), get()) }
-        viewModel { LoginViewModel() }
-        viewModel { ProductListViewModel() }
-        viewModel { ProductDetailViewModel() }
-        viewModel { ImagesPagerViewModel() }
+        viewModel<MainViewModel> { MainViewModel(get(), get()) }
+        viewModel<LoginViewModel> { LoginViewModel(get()) }
+        viewModel<ProductListViewModel> { ProductListViewModel(get()) }
+        viewModel<ProductDetailViewModel> { ProductDetailViewModel() }
+        viewModel<ImagesPagerViewModel> { ImagesPagerViewModel() }
     }
 }

@@ -10,19 +10,4 @@ import com.example.domain2.model.Element
 
 class MainViewModel(val getElement: GetElements, val addElement: AddElement) : ViewModel() {
 
-    val stateTitle = liveData {
-        emit("Elements")
-    }
-
-    private val _stateList: MutableLiveData<List<Element>> = MutableLiveData()
-    val stateList: LiveData<List<Element>>
-        get() = _stateList
-
-    fun getElements() {
-        _stateList.value = getElement.invoke()
-    }
-
-    fun addElement() {
-        _stateList.value = addElement.invoke()
-    }
 }

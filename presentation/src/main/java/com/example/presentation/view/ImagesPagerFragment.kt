@@ -3,7 +3,7 @@ package com.example.presentation.view
 import es.example.presentation.BaseFragment
 import es.example.presentation.BaseViewModel
 
-class ImagesPagerFragment: BaseFragment<ImagesPagerStates, ImagesPagerTransition>(){
+class ImagesPagerFragment(): BaseFragment<ImagesPagerStates, ImagesPagerTransition>(){
 
     override val viewModel: BaseViewModel<ImagesPagerStates, ImagesPagerTransition>
         get() = TODO("not implemented") //To change initializer of created properties use File | Settings | File Templates.
