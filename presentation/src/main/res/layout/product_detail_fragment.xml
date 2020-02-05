@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/motionLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/scene_detail"
+    tools:showPaths="true">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/rlProductAuxContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_producto_subido" />
+
+
+    <TextView
+        android:id="@+id/tvTitleDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Titulo del producto"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/tvDescriptionDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="En un lugar de la Mancha, de cuyo nombre no quiero acordarme..."
+        android:textAlignment="center"/>
+
+    <RelativeLayout
+        android:id="@+id/rlButtonsContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_shadow"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btModificar"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/my_button_background"
+            android:padding="10dp"
+            android:text="Modificar"
+            android:textColor="#00838f"
+            app:cornerRadius="25dp" />
+
+        <Button
+            android:id="@+id/btBorrar"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/my_button_background"
+            android:padding="10dp"
+            android:text="Borrar"
+            android:textColor="#00838f"
+            app:cornerRadius="25dp" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
