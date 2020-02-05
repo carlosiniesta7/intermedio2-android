@@ -1,30 +1,25 @@
 package com.example.presentation.view
 
+import com.example.presentation.R
 import es.example.presentation.BaseFragment
-import es.example.presentation.BaseViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ProductDetailFragment: BaseFragment<ProductDetailStates, ProductDetailTransition>(){
 
-    override val viewModel: BaseViewModel<ProductDetailStates, ProductDetailTransition>
-        get() = TODO("not implemented") //To change initializer of created properties use File | Settings | File Templates.
-
+    override val viewModel by viewModel<ProductDetailViewModel>()
     override fun initViews() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun manageState(state: ProductDetailStates) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun manageTransition(transition: ProductDetailTransition) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun initListeners() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun getLayout(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return R.layout.product_detail_fragment
     }
 }
