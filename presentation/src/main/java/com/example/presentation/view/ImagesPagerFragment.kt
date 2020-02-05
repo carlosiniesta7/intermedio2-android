@@ -8,7 +8,7 @@ import es.example.presentation.BaseViewModel
 import kotlinx.android.synthetic.main.fragment_viewpager.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class ImagesPagerFragment(): BaseFragment<ImagesPagerStates, ImagesPagerTransition>(){
+class ImagesPagerFragment : BaseFragment<ImagesPagerStates, ImagesPagerTransition>(){
 
     override val viewModel by viewModel <ImagesPagerViewModel>()
 
@@ -22,19 +22,15 @@ class ImagesPagerFragment(): BaseFragment<ImagesPagerStates, ImagesPagerTransiti
             }
         })
 
-        view_pager2.orientation = ViewPager2.ORIENTATION_VERTICAL
     }
 
     override fun manageState(state: ImagesPagerStates) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun manageTransition(transition: ImagesPagerTransition) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun initListeners() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun getLayout(): Int {

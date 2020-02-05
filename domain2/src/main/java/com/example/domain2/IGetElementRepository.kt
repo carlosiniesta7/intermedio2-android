@@ -9,4 +9,5 @@ interface IGetElementRepository {
     fun addElement(): List<Element>
     fun deleteElement(name: String): Boolean
     fun doLogin(): Boolean
+    fun getImages(): List<Int>
 }

@@ -28,10 +28,11 @@ class MyApplication : Application() {
         factory { AddElement(get()) }
         factory { DeleteElement(get()) }
         factory { DoLogin(get()) }
+        factory { GetImages(get()) }
         viewModel<MainViewModel> { MainViewModel(get(), get()) }
         viewModel<LoginViewModel> { LoginViewModel(get()) }
         viewModel<ProductListViewModel> { ProductListViewModel(get()) }
         viewModel<ProductDetailViewModel> { ProductDetailViewModel() }
-        viewModel<ImagesPagerViewModel> { ImagesPagerViewModel() }
+        viewModel<ImagesPagerViewModel> { ImagesPagerViewModel(get()) }
     }
 }

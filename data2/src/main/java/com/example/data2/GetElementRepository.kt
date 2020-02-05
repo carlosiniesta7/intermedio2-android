@@ -23,4 +23,8 @@ class GetElementRepository: IGetElementRepository {
     override fun doLogin(): Boolean {
         return ElementRepository.doLogin()
     }
+
+    override fun getImages(): List<Int> {
+        return ElementRepository.getImages()
+    }
 }

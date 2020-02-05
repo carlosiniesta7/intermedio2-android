@@ -57,4 +57,8 @@ object ElementRepository {
     fun doLogin(): Boolean {
         return true
     }
+
+    fun getImages(): List<Int> {
+        return listOf()
+    }
 }
