@@ -1,19 +1,18 @@
 package com.example.presentation.view
 
-import android.os.Parcel
-import android.os.Parcelable
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.liveData
-import com.example.domain2.GetElements
-import com.example.domain2.model.Element
+import androidx.lifecycle.viewModelScope
+import com.example.domain2.DoLogin
 import es.example.presentation.BaseViewModel
+import kotlinx.coroutines.launch
 
-class LoginViewModel(val getElement: GetElements): BaseViewModel<LoginState, LoginTransition>() {
-
+class LoginViewModel(val doLogin: DoLogin): BaseViewModel<LoginState, LoginTransition>() {
 
     fun doLogin() {
-        //UC-Login
+        viewModelScope.launch {
+            var response = doLogin.invoke()
+            if (response)
+                viewTransition.value = LoginTransition.NavigateToProductList()
+            else viewTransition.value = LoginTransition.NotNavigate()
+        }
     }
 }

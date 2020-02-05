@@ -19,4 +19,8 @@ class GetElementRepository: IGetElementRepository {
     override fun addElement(): List<Element> {
         return ElementRepository.addElement()
     }
+
+    override fun doLogin(): Boolean {
+        return ElementRepository.doLogin()
+    }
 }

@@ -53,4 +53,8 @@ object ElementRepository {
 
         return elementList.remove(elementToRemove)
     }
+
+    fun doLogin(): Boolean {
+        return true
+    }
 }

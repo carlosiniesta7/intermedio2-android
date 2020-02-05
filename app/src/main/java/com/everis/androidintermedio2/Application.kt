@@ -27,6 +27,7 @@ class MyApplication : Application() {
         factory { GetElement(get()) }
         factory { AddElement(get()) }
         factory { DeleteElement(get()) }
+        factory { DoLogin(get()) }
         viewModel<MainViewModel> { MainViewModel(get(), get()) }
         viewModel<LoginViewModel> { LoginViewModel(get()) }
         viewModel<ProductListViewModel> { ProductListViewModel(get()) }
