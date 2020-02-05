@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.domain2.GetElements
 import com.example.domain2.model.Element
+import com.example.presentation.view.viewEntities.ElementViewEntity
 import es.example.presentation.BaseViewModel
 import kotlinx.coroutines.launch
 
@@ -13,15 +14,21 @@ class ProductListViewModel(val getElements: GetElements) : BaseViewModel<Product
 
     private val _stateList: MutableLiveData<List<Element>> = MutableLiveData()
 
-    val stateList: LiveData<List<Element>>
-        get() = _stateList
-
     fun getElements() {
 
         viewModelScope.launch {
             var response = getElements.invoke()
+            var list: MutableList<ElementViewEntity> = mutableListOf()
 
-            _stateList.value = response
+            response.forEach {
+                list.add(ElementViewEntity(it.name, it.description))
+            }
+
+            viewState.value = ProductListStates.InitListState(list)
         }
+    }
+
+    fun goToDetail(name: String, description: String){
+        viewTransition.value = ProductListTransition.GoToProductDetail(name, description)
     }
 }
