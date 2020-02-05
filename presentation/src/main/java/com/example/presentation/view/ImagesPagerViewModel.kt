@@ -17,6 +17,6 @@ class ImagesPagerViewModel(val getImages: GetImages): BaseViewModel<ImagesPagerS
 
     fun getImages() {
         //stateImage.value = getImages.invoke()
-        stateImage.value = listOf(R.drawable.ic_producto_subido, R.drawable.ic_launcher_background, R.drawable.my_button_background)
+        stateImage.value = listOf(R.drawable.ic_producto_subido, R.drawable.ic_error_subir_producto, R.drawable.ic_error_sistema)
     }
 }

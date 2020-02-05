@@ -1,5 +1,6 @@
 package com.example.presentation.view
 
+import androidx.navigation.fragment.findNavController
 import com.example.presentation.R
 import es.example.presentation.BaseFragment
 import kotlinx.android.synthetic.main.product_detail_fragment.*
@@ -18,9 +19,16 @@ class ProductDetailFragment: BaseFragment<ProductDetailStates, ProductDetailTran
     }
 
     override fun manageTransition(transition: ProductDetailTransition) {
+        when(transition){
+            is ProductDetailTransition.NavigateToImagePager ->
+                findNavController().navigate(R.id.action_product_detail_fragment_to_image_pager_fragment)
+        }
     }
 
     override fun initListeners() {
+        rlProductAuxContent.setOnClickListener {
+            viewModel.goToViewPager()
+        }
     }
 
     override fun getLayout(): Int {
