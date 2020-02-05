@@ -1,4 +1,4 @@
 package com.example.presentation.view
 
-class LoginTransition {
+sealed class LoginTransition {
 }

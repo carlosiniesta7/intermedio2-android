@@ -1,4 +1,7 @@
 package com.example.presentation.view
 
-class LoginState {
+import android.os.Parcelable
+
+sealed class LoginState: Parcelable {
+
 }

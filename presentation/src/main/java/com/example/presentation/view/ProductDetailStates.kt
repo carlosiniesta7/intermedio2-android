@@ -1,4 +1,6 @@
 package com.example.presentation.view
 
-class ProductDetailStates {
+import android.os.Parcelable
+
+sealed class ProductDetailStates: Parcelable {
 }

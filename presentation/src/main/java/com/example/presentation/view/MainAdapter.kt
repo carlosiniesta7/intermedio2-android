@@ -29,7 +29,8 @@ class MainAdapter : ListAdapter<Element, MainAdapter.MainVH>(
 
     inner class MainVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(element: Element) {
-            itemView.tvItem?.text = element.name
+            itemView.tvTitle?.text = element.name
+            itemView.tvDescription?.text = element.description
         }
     }
 

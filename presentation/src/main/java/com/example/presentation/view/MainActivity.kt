@@ -36,8 +36,8 @@ class MainActivity : AppCompatActivity() {
 
         MyViewModel.getElements()
 
-        bAddElement?.setOnClickListener {
-            MyViewModel.addElement()
-        }
+//        bAddElement?.setOnClickListener {
+//            MyViewModel.addElement()
+//        }
     }
 }
