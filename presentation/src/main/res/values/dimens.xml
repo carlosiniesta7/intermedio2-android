@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="margin_small">10dp</dimen>
+    <!-- Login dimens -->
+    <dimen name="login_vertical_margin">16dp</dimen>
+    <dimen name="login_horizontal_margin">16dp</dimen>
 </resources>
