@@ -9,7 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlin.coroutines.CoroutineContext
 
-abstract class BaseViewModel <STATE : Parcelable, TRANSITION> : ViewModel() {
+abstract class BaseViewModel <STATE : Parcelable, TRANSITION>() : ViewModel() {
 
     protected val viewState = MutableLiveData<STATE>()
     protected val viewTransition = SingleLiveEvent<TRANSITION>()

@@ -8,7 +8,7 @@ import es.example.presentation.BaseViewModel
 import kotlinx.android.synthetic.main.fragment_viewpager.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class ImagesPagerFragment: BaseFragment<ImagesPagerStates, ImagesPagerTransition>(){
+class ImagesPagerFragment(): BaseFragment<ImagesPagerStates, ImagesPagerTransition>(){
 
     override val viewModel by viewModel <ImagesPagerViewModel>()
 

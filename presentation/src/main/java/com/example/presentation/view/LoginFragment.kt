@@ -1,26 +1,26 @@
 package com.example.presentation.view
 
 import androidx.navigation.fragment.findNavController
+import androidx.lifecycle.Observer
 import com.example.presentation.R
 import es.example.presentation.BaseFragment
 import es.example.presentation.BaseViewModel
+import kotlinx.android.synthetic.main.product_list_layout.*
 import kotlinx.android.synthetic.main.fragment_login.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginFragment: BaseFragment<LoginState, LoginTransition>(){
 
+
     override val viewModel by viewModel <LoginViewModel>()
 
     override fun initViews() {
-        //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun manageState(state: LoginState) {
-        //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun manageTransition(transition: LoginTransition) {
-        //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun initListeners() {
