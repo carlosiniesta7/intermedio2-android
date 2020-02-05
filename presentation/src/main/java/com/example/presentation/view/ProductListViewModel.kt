@@ -8,6 +8,7 @@ import com.example.domain2.GetElements
 import com.example.domain2.model.Element
 import com.example.presentation.view.viewEntities.ElementViewEntity
 import es.example.presentation.BaseViewModel
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
 class ProductListViewModel(val getElements: GetElements) : BaseViewModel<ProductListStates, ProductListTransition>() {
@@ -17,15 +18,27 @@ class ProductListViewModel(val getElements: GetElements) : BaseViewModel<Product
     fun getElements() {
 
         viewModelScope.launch {
-            var response = getElements.invoke()
-            var list: MutableList<ElementViewEntity> = mutableListOf()
 
-            response.forEach {
-                list.add(ElementViewEntity(it.name, it.description))
+            val response = viewModelScope.async {
+                getElements.invoke()
             }
 
-            viewState.value = ProductListStates.InitListState(list)
+            response.await().fold(::handleProductListError, ::handleProductListOk)
         }
+    }
+
+    fun handleProductListOk(response: List<Element>){
+        var list: MutableList<ElementViewEntity> = mutableListOf()
+
+        response.forEach {
+            list.add(ElementViewEntity(it.name, it.description))
+        }
+
+        viewState.value = ProductListStates.InitListState(list)
+    }
+
+    fun handleProductListError(e: Exception){
+
     }
 
     fun goToDetail(name: String, description: String){
