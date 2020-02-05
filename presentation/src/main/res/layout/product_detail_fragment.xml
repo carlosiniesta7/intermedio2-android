@@ -7,7 +7,13 @@
     android:layout_height="match_parent"
     app:layoutDescription="@xml/scene_detail"
     tools:showPaths="true">
-
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivProductHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_fondo_login" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/rlProductAuxContent"
@@ -30,6 +36,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="En un lugar de la Mancha, de cuyo nombre no quiero acordarme..."
+        android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/tvOpenGallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Abrir galería"
         android:textAlignment="center"/>
 
     <RelativeLayout

@@ -1,9 +1,9 @@
 package com.example.presentation.view
 
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.example.presentation.R
 import es.example.presentation.BaseFragment
-import es.example.presentation.BaseViewModel
 import kotlinx.android.synthetic.main.product_list_layout.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -27,9 +27,9 @@ class ProductListFragment: BaseFragment<ProductListStates, ProductListTransition
 
         viewModel.getElements()
 
-//        bAddElement?.setOnClickListener {
-//            MyViewModel.addElement()
-//        }
+       bAddElement?.setOnClickListener {
+           findNavController().navigate(R.id.action_product_list_fragment_to_product_detail_fragment)
+        }
     }
 
     override fun manageState(state: ProductListStates) {
