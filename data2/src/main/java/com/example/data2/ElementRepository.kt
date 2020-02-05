@@ -6,15 +6,20 @@ const val description = "Lorem Ipsum is simply dummy text of the printing and ty
 
 object ElementRepository {
 
-    var elementList: MutableList<Element> = getElements()
+    var elementList: MutableList<Element> = initElements()
+
+
+    fun initElements(): MutableList<Element> {
+        var list: MutableList<Element> = mutableListOf()
+
+        (0 until 50).map {
+            list.add(Element(name = "Título $it", description = description))
+        }
+
+        return list
+    }
 
     fun getElements(): MutableList<Element> {
-//        elementList.clear()
-//
-//        (0 until 50).map {
-//            elementList.add(Element(name = "Título $it", description = description))
-//        }
-
         return elementList
     }
 

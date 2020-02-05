@@ -2,13 +2,12 @@ package com.example.domain2
 
 import Either
 import UseCaseParamsExecutor
-import com.example.domain2.model.Element
 
 class DeleteElement(private val repository: IGetElementRepository) :
-    UseCaseParamsExecutor<Exception, Element, Element> {
-    override suspend fun execute(params: Element): Either<Exception, Element> {
-        return when (val response = repository.deleteElement(params.name)) {
-            is Either.Success -> Either.Success(response.value)
+    UseCaseParamsExecutor<Exception, Boolean, String> {
+    override suspend fun execute(params: String): Either<Exception, Boolean> {
+        return when (val response = repository.deleteElement(params)) {
+            is Either.Success -> Either.Success(true)
             is Either.Failure -> response
         }
     }

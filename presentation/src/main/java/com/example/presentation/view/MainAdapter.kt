@@ -8,9 +8,10 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.domain2.model.Element
 import com.example.presentation.R
+import com.example.presentation.view.viewEntities.ElementViewEntity
 import kotlinx.android.synthetic.main.activity_main_item.view.*
 
-class MainAdapter : ListAdapter<Element, MainAdapter.MainVH>(
+class MainAdapter(var listener: OnItemClickListener) : ListAdapter<ElementViewEntity, MainAdapter.MainVH>(
     ListElementsCallback()
 ) {
 
@@ -28,20 +29,27 @@ class MainAdapter : ListAdapter<Element, MainAdapter.MainVH>(
     }
 
     inner class MainVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(element: Element) {
+        fun bind(element: ElementViewEntity) {
             itemView.tvTitle?.text = element.name
             itemView.tvDescription?.text = element.description
+
+            itemView.setOnClickListener {
+                listener.onItemClick(element.name, element.description)
+            }
         }
     }
 
-    class ListElementsCallback : DiffUtil.ItemCallback<Element>() {
-        override fun areItemsTheSame(oldItem: Element, newItem: Element): Boolean {
+    class ListElementsCallback : DiffUtil.ItemCallback<ElementViewEntity>() {
+        override fun areItemsTheSame(oldItem: ElementViewEntity, newItem: ElementViewEntity): Boolean {
             return oldItem == newItem
         }
 
-        override fun areContentsTheSame(oldItem: Element, newItem: Element): Boolean {
+        override fun areContentsTheSame(oldItem: ElementViewEntity, newItem: ElementViewEntity): Boolean {
             return oldItem.name == newItem.name
         }
     }
 
+    interface OnItemClickListener{
+        fun onItemClick(name: String, description: String)
+    }
 }
