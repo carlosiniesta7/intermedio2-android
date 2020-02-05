@@ -6,16 +6,26 @@ const val description = "Lorem Ipsum is simply dummy text of the printing and ty
 
 object ElementRepository {
 
-    var elementList: MutableList<Element> = mutableListOf()
+    var elementList: MutableList<Element> = getElements()
 
     fun getElements(): MutableList<Element> {
-        elementList.clear()
-
-        (0 until 50).map {
-            elementList.add(Element(name = "Título $it", description = description))
-        }
+//        elementList.clear()
+//
+//        (0 until 50).map {
+//            elementList.add(Element(name = "Título $it", description = description))
+//        }
 
         return elementList
+    }
+
+    fun getElement(name: String): Element{
+
+        elementList.forEach {element ->
+            if(element.name == name)
+                return element
+        }
+
+        return Element("empty","empty")
     }
 
     fun addElement(): List<Element> {
@@ -30,5 +40,17 @@ object ElementRepository {
         }
 
         return elementList
+    }
+
+    fun deleteElement(name: String): Boolean{
+
+        var elementToRemove: Element? = null
+
+        elementList.forEach {element ->
+            if(element.name == name)
+                elementToRemove = element
+        }
+
+        return elementList.remove(elementToRemove)
     }
 }

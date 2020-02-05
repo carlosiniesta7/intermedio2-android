@@ -5,6 +5,7 @@ ext {
     androidLifeCycleVersion = "2.2.0"
     koin_version = '2.0.1'
     viewPager2 = "1.0.0"
+    nav_version = "2.1.0"
 
 
     presentationLib = [
@@ -16,7 +17,9 @@ ext {
             lifeCycleViewModel: "androidx.lifecycle:lifecycle-viewmodel-ktx:$androidLifeCycleVersion",
             lifeCycleRuntime  : "androidx.lifecycle:lifecycle-runtime-ktx:$androidLifeCycleVersion",
             koinViewmodel     : "org.koin:koin-androidx-viewmodel:$koin_version",
-            viewPager2         : "androidx.viewpager2:viewpager2:$viewPager2"
+            viewPager2        : "androidx.viewpager2:viewpager2:$viewPager2",
+            navFragment       : "androidx.navigation:navigation-fragment-ktx:$nav_version",
+            navUi             : "androidx.navigation:navigation-ui-ktx:$nav_version"
     ]
 
     appLib = [
