@@ -5,5 +5,7 @@
     <string name="prompt_email">Username</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign In</string>
+    <string name="NotReadySignIn">Por favor, introduzca tanto el username como la password</string>
+    <string name="SignInError">Lo sentimos, se ha producido un Error durante la Autenticación</string>
 
 </resources>
