@@ -1,6 +1,7 @@
 package com.example.presentation.view
 
 import androidx.lifecycle.Observer
+import com.example.presentation.R
 import es.example.presentation.BaseFragment
 import es.example.presentation.BaseViewModel
 import kotlinx.android.synthetic.main.product_list_layout.*
@@ -32,18 +33,15 @@ class ProductListFragment: BaseFragment<ProductListStates, ProductListTransition
     }
 
     override fun manageState(state: ProductListStates) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun manageTransition(transition: ProductListTransition) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun initListeners() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun getLayout(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return R.layout.product_list_layout
     }
 }
