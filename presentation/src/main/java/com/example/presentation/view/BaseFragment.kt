@@ -67,12 +67,5 @@ abstract class BaseFragment<STATE : Parcelable, TRANSITION>: Fragment() {
         super.onSaveInstanceState(outState)
         viewModel.getViewState().value?.apply { outState.putParcelable("state", this) }
     }
-
-//    abstract fun updateViewsWithInsets()
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        updateViewsWithInsets()
-        super.onViewCreated(view, savedInstanceState)
-    }
 }
 
