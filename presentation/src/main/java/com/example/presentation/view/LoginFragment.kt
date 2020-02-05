@@ -1,5 +1,6 @@
 package com.example.presentation.view
 
+import androidx.navigation.fragment.findNavController
 import com.example.presentation.R
 import es.example.presentation.BaseFragment
 import es.example.presentation.BaseViewModel
@@ -25,7 +26,8 @@ class LoginFragment: BaseFragment<LoginState, LoginTransition>(){
     override fun initListeners() {
         btn_login.setOnClickListener {
             //TODO: UC-Login
-            viewModel.doLogin()
+            //viewModel.doLogin()
+            findNavController().navigate(R.id.action_login_fragment_to_product_list_fragment)
         }
     }
 

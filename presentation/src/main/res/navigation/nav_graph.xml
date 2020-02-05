@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/product_list_fragment"
         android:name="com.example.presentation.view.ProductListFragment"
-        tools:layout="@layout/fragment_viewpager"
+        tools:layout="@layout/product_list_layout"
         android:label="ProductListFragment">
         <action
             android:id="@+id/action_product_list_fragment_to_product_detail_fragment"
@@ -32,6 +32,12 @@
         android:name="com.example.presentation.view.ProductDetailFragment"
         tools:layout="@layout/fragment_viewpager"
         android:label="ProductDetailFragment">
+        <argument
+            android:name="productName"
+            app:argType="string"/>
+        <argument
+            android:name="productDes"
+            app:argType="string"/>
         <action
             android:id="@+id/action_product_detail_fragment_to_image_pager_fragment"
             app:destination="@id/image_pager_fragment" />
