@@ -1,6 +1,7 @@
 package com.example.presentation.view
 
 import androidx.lifecycle.ViewModel
+import es.example.presentation.BaseViewModel
 
-class ImagesPagerViewModel: ViewModel() {
+class ImagesPagerViewModel: BaseViewModel<ImagesPagerStates, ImagesPagerTransition>()  {
 }
