@@ -64,6 +64,6 @@ object ElementRepository {
     }
 
     fun getImages(): List<Int> {
-        return listOf()
+        return listOf(1,2,3)
     }
 }

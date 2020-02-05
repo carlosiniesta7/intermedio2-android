@@ -1,4 +1,5 @@
 package com.example.presentation.view
 
-class ProductDetailTransition {
+sealed class ProductDetailTransition {
+    class NavigateToImagePager: ProductDetailTransition()
 }
